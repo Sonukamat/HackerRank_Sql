@@ -1,2 +1,5 @@
-select Name from CITY
-where CountryCode ='JPN';
+/*
+Enter your query here.
+*/
+select CITY,STATE
+from STATION;
