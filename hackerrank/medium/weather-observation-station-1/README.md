@@ -1,4 +1,4 @@
-# weather-observation-station-1
+# Weather Observation Station 1
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -25,11 +25,14 @@ where **LAT\_N** is the northern latitude and **LONG\_W** is the western longitu
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-29T13:35:32.713Z  
+**Submitted:** 2026-09-29T13:36:44.913Z  
 
 ```sql
-select Name from CITY
-where CountryCode ='JPN';
+/*
+Enter your query here.
+*/
+select CITY,STATE
+from STATION;
 
 ```
 
