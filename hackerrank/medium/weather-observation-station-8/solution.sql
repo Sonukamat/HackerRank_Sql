@@ -1,11 +1,8 @@
 /*
 Enter your query here.
 */
-select distinct CITY
+SELECT DISTINCT CITY
 FROM STATION
-WHERE CITY LIKE '%a'
-or CITY LIKE '%e'
-or CITY LIKE '%i'
-or CITY LIKE '%o'
-or CITY LIKE '%u';
-
+WHERE (CITY LIKE 'a%' OR CITY LIKE 'e%' OR CITY LIKE 'i%' OR CITY LIKE 'o%' OR CITY LIKE 'u%')
+AND
+(CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u');
