@@ -1,2 +1,2 @@
-select * from city
-where Id=1661;
+select * from CITY
+where CountryCode='JPN';
