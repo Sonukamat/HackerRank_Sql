@@ -1,5 +1,12 @@
 /*
 Enter your query here.
 */
-select count(CITY)-count(distinct CITY)
-from STATION;
+(SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY) ASC, CITY ASC
+LIMIT 1)
+union
+(select CITY,length(CITY)
+from STATION
+ORDER BY LENGTH(CITY) DESC, CITY ASC
+LIMIT 1);
