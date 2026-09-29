@@ -1,0 +1,2 @@
+select * from city
+where Id=1661;
