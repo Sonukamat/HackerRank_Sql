@@ -11,7 +11,7 @@ WHERE
     AND CITY NOT LIKE 'O%'
     AND CITY NOT LIKE 'U%'
 )
-OR
+AND
 (
     CITY NOT LIKE '%A'
     AND CITY NOT LIKE '%E'
