@@ -1,4 +1,4 @@
-# Weather Observation Station 8
+# Revising the Select Query I
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -21,17 +21,10 @@ where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-29T17:52:30.129Z  
+**Submitted:** 2026-09-30T13:07:24.033Z  
 
 ```sql
-/*
-Enter your query here.
-*/
-SELECT DISTINCT CITY
-FROM STATION
-WHERE (CITY LIKE 'a%' OR CITY LIKE 'e%' OR CITY LIKE 'i%' OR CITY LIKE 'o%' OR CITY LIKE 'u%')
-AND
-(CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u');
+SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
 
 ```
 
