@@ -22,7 +22,7 @@ where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T13:34:31.762Z  
+**Submitted:** 2026-09-30T13:35:07.205Z  
 
 ```sql
 /*
@@ -38,7 +38,7 @@ WHERE
     AND CITY NOT LIKE 'O%'
     AND CITY NOT LIKE 'U%'
 )
-OR
+AND
 (
     CITY NOT LIKE '%A'
     AND CITY NOT LIKE '%E'
