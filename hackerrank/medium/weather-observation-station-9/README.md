@@ -1,4 +1,4 @@
-# Revising the Select Query I
+# Weather Observation Station 9
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -21,10 +21,20 @@ where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T13:07:24.033Z  
+**Submitted:** 2026-09-30T13:17:31.917Z  
 
 ```sql
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+select distinct CITY 
+FROM STATION
+WHERE
+(CITY NOT LIKE 'A%')
+AND(CITY NOT LIKE 'E%')
+AND(CITY NOT LIKE 'I%')
+AND( CITY NOT LIKE 'O%')
+AND (CITY NOT LIKE 'U%');
 
 ```
 
