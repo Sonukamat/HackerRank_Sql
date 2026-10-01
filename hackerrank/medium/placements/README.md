@@ -1,4 +1,4 @@
-# Revising the Select Query I
+# Placements
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -61,10 +61,22 @@ The name output, when ordered by the salary offered to their friends, will be:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-01T11:13:06.360Z  
+**Submitted:** 2026-10-01T11:27:44.250Z  
 
 ```sql
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+SELECT S.NAME
+FROM STUDENTS S
+JOIN FRIENDS F
+    ON S.ID = F.ID
+JOIN PACKAGES P1
+    ON S.ID = P1.ID
+JOIN PACKAGES P2
+    ON F.FRIEND_ID = P2.ID
+WHERE P2.SALARY > P1.SALARY
+ORDER BY P2.SALARY;
 
 ```
 
