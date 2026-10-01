@@ -1,4 +1,4 @@
-# Placements
+# Symmetric Pairs
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -37,22 +37,41 @@ __Sample Output__
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-01T11:27:48.914Z  
+**Submitted:** 2026-10-01T11:44:20.419Z  
 
 ```sql
 /*
 Enter your query here.
 */
-SELECT S.NAME
-FROM STUDENTS S
-JOIN FRIENDS F
-    ON S.ID = F.ID
-JOIN PACKAGES P1
-    ON S.ID = P1.ID
-JOIN PACKAGES P2
-    ON F.FRIEND_ID = P2.ID
-WHERE P2.SALARY > P1.SALARY
-ORDER BY P2.SALARY;
+SELECT DISTINCT F1.X, F1.Y
+FROM Functions F1
+WHERE
+    (
+        F1.X < F1.Y
+        AND EXISTS (
+            SELECT 1
+            FROM Functions F2
+            WHERE F2.X = F1.Y
+              AND F2.Y = F1.X
+        )
+    )
+    OR
+    (
+        F1.X = F1.Y
+        AND EXISTS (
+            SELECT 1
+            FROM Functions F2
+            WHERE F2.X = F1.X
+              AND F2.Y = F1.Y
+        )
+        AND (
+            SELECT COUNT(*)
+            FROM Functions F2
+            WHERE F2.X = F1.X
+              AND F2.Y = F1.Y
+        ) > 1
+    )
+ORDER BY F1.X, F1.Y;
 
 ```
 
