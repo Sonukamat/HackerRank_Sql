@@ -1,4 +1,4 @@
-# Revising the Select Query I
+# binary-search-tree-1
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -52,10 +52,20 @@ The <em>Binary Tree</em> below illustrates the sample:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-04T08:39:04.405Z  
+**Submitted:** 2026-10-04T09:09:08.400Z  
 
 ```sql
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+SELECT N,
+CASE
+    WHEN P IS NULL THEN 'Root'
+    WHEN N IN(SELECT P FROM BST) THEN 'Inner'
+    ELSE 'Leaf'
+END
+FROM BST
+ORDER BY N;
 
 ```
 
