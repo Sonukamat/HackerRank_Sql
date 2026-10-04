@@ -42,20 +42,32 @@ The following tables contain company data:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-04T09:09:10.314Z  
+**Submitted:** 2026-10-04T09:25:03.555Z  
 
 ```sql
 /*
 Enter your query here.
 */
-SELECT N,
-CASE
-    WHEN P IS NULL THEN 'Root'
-    WHEN N IN(SELECT P FROM BST) THEN 'Inner'
-    ELSE 'Leaf'
-END
-FROM BST
-ORDER BY N;
+select
+    c.company_code,
+    c.founder,
+    count(distinct lm.lead_manager_code) as lean_manager_count,
+    count(distinct sm.senior_manager_code) as senior_manager_count,
+    count(distinct m.manager_code) as manager_count,
+    count(distinct e.employee_code) as employee_count
+from Company c 
+left join Lead_Manager lm
+    on c.company_code = lm.company_code
+left join Senior_manager sm
+    on c.company_code = sm.company_code
+left join Manager m 
+    on c.company_code= m.company_code
+left join Employee e 
+    on c.company_code = e.company_code
+group by 
+    c.company_code,
+    c.founder
+order by c.company_code;
 
 ```
 
