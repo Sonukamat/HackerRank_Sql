@@ -1,1 +1,11 @@
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+SELECT N,
+CASE
+    WHEN P IS NULL THEN 'Root'
+    WHEN N IN(SELECT P FROM BST) THEN 'Inner'
+    ELSE 'Leaf'
+END
+FROM BST
+ORDER BY N;
