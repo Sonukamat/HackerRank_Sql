@@ -37,32 +37,58 @@ The following tables hold interview data:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-04T09:25:09.892Z  
+**Submitted:** 2026-10-04T09:58:56.020Z  
 
 ```sql
 /*
 Enter your query here.
 */
-select
-    c.company_code,
-    c.founder,
-    count(distinct lm.lead_manager_code) as lean_manager_count,
-    count(distinct sm.senior_manager_code) as senior_manager_count,
-    count(distinct m.manager_code) as manager_count,
-    count(distinct e.employee_code) as employee_count
-from Company c 
-left join Lead_Manager lm
-    on c.company_code = lm.company_code
-left join Senior_manager sm
-    on c.company_code = sm.company_code
-left join Manager m 
-    on c.company_code= m.company_code
-left join Employee e 
-    on c.company_code = e.company_code
-group by 
-    c.company_code,
-    c.founder
-order by c.company_code;
+SELECT
+    c.contest_id,
+    c.hacker_id,
+    c.name,
+    COALESCE(SUM(s.total_submissions), 0) AS total_submissions,
+    COALESCE(SUM(s.total_accepted_submissions), 0) AS total_accepted_submissions,
+    COALESCE(SUM(v.total_views), 0) AS total_views,
+    COALESCE(SUM(v.total_unique_views), 0) AS total_unique_views
+FROM Contests c
+JOIN Colleges co
+    ON c.contest_id = co.contest_id
+JOIN Challenges ch
+    ON co.college_id = ch.college_id
+
+LEFT JOIN (
+    SELECT
+        challenge_id,
+        SUM(total_submissions) AS total_submissions,
+        SUM(total_accepted_submissions) AS total_accepted_submissions
+    FROM Submission_Stats
+    GROUP BY challenge_id
+) s
+    ON ch.challenge_id = s.challenge_id
+
+LEFT JOIN (
+    SELECT
+        challenge_id,
+        SUM(total_views) AS total_views,
+        SUM(total_unique_views) AS total_unique_views
+    FROM View_Stats
+    GROUP BY challenge_id
+) v
+    ON ch.challenge_id = v.challenge_id
+
+GROUP BY
+    c.contest_id,
+    c.hacker_id,
+    c.name
+
+HAVING
+    total_submissions > 0
+    OR total_accepted_submissions > 0
+    OR total_views > 0
+    OR total_unique_views > 0
+
+ORDER BY c.contest_id;
 
 ```
 
