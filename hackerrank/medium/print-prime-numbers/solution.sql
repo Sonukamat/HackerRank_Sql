@@ -1,7 +1,13 @@
 /*
 Enter your query here.
 */
-SELECT NAME 
-FROM EMPLOYEE
-WHERE SALARY >2000 AND MONTHS <10
-ORDER BY EMPLOYEE_ID ASC;
+with recursive numbers(n) as
+(
+    select 1
+    union all
+    select n+1
+    from numbers
+    where n<20
+)
+select repeat('* ',n)
+from numbers;
