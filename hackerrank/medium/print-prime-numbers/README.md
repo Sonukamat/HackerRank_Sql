@@ -26,22 +26,28 @@ For example, the output for all prime numbers $\leq 10$ would be:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T16:47:00.611Z  
+**Submitted:** 2026-10-07T17:13:50.357Z  
 
 ```sql
 /*
 Enter your query here.
 */
-with recursive numbers(n) as
-(
-    select 1
-    union all
-    select n+1
-    from numbers
-    where n<20
+WITH RECURSIVE nums AS (
+    SELECT 2 AS n
+    UNION ALL
+    SELECT n + 1
+    FROM nums
+    WHERE n < 1000
 )
-select repeat('* ',n)
-from numbers;
+SELECT GROUP_CONCAT(n SEPARATOR '&')
+FROM nums
+WHERE n NOT IN (
+    SELECT a.n
+    FROM nums a
+    JOIN nums b
+      ON b.n < a.n
+     AND a.n % b.n = 0
+);
 
 ```
 
