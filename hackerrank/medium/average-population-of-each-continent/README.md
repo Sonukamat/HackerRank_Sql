@@ -28,14 +28,15 @@ The **CITY** and **COUNTRY** tables are described as follows:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T17:24:21.453Z  
+**Submitted:** 2026-10-07T17:29:25.310Z  
 
 ```sql
-SELECT CITY.NAME
+SELECT COUNTRY.CONTINENT,
+FLOOR (AVG(CITY.POPULATION))
 FROM CITY 
 JOIN COUNTRY 
-ON CITY.CountryCode = COUNTRY.Code
-WHERE COUNTRY.CONTINENT='Africa';
+ON CITY.CountryCode = COUNTRY.Code 
+group by COUNTRY.CONTINENT;
 
 ```
 
