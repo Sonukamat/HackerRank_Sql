@@ -26,14 +26,14 @@ The **CITY** and **COUNTRY** tables are described as follows:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T17:19:38.169Z  
+**Submitted:** 2026-10-07T17:24:02.016Z  
 
 ```sql
-SELECT SUM(CITY.POPULATION)
-FROM CITY
-JOIN COUNTRY
-ON CITY.CountryCode =COUNTRY.Code 
-WHERE COUNTRY.CONTINENT='Asia';
+SELECT CITY.NAME
+FROM CITY 
+JOIN COUNTRY 
+ON CITY.CountryCode = COUNTRY.Code
+WHERE COUNTRY.CONTINENT='Africa';
 
 ```
 
