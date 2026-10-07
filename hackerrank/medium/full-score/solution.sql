@@ -1,23 +1,16 @@
 /*
 Enter your query here.
 */
-SELECT
-    CASE
-        WHEN G.Grade < 8 THEN 'NULL'
-        ELSE S.Name
-    END AS Name,
-    G.Grade,
-    S.Marks
-FROM Students S
-JOIN Grades G
-    ON S.Marks BETWEEN G.Min_Mark AND G.Max_Mark
-ORDER BY
-    G.Grade DESC,
-    CASE
-        WHEN G.Grade >= 8 THEN S.Name
-        ELSE NULL
-    END ASC,
-    CASE
-        WHEN G.Grade < 8 THEN S.Marks
-        ELSE NULL
-    END ASC;
+SELECT h.hacker_id, h.name
+FROM Hackers h
+JOIN Submissions s
+    ON h.hacker_id = s.hacker_id
+JOIN Challenges c
+    ON s.challenge_id = c.challenge_id
+JOIN Difficulty d
+    ON c.difficulty_level = d.difficulty_level
+WHERE s.score = d.score
+GROUP BY h.hacker_id, h.name
+HAVING COUNT(DISTINCT s.challenge_id) > 1
+ORDER BY COUNT(DISTINCT s.challenge_id) DESC,
+         h.hacker_id ASC;
