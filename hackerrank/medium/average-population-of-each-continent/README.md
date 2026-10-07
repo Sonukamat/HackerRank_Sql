@@ -28,7 +28,7 @@ The **CITY** and **COUNTRY** tables are described as follows:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T17:29:25.310Z  
+**Submitted:** 2026-10-07T17:30:46.813Z  
 
 ```sql
 SELECT COUNTRY.CONTINENT,
