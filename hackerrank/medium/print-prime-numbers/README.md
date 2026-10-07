@@ -1,4 +1,4 @@
-# Employee Salaries
+# print-prime-numbers
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -26,16 +26,22 @@ For example, the output for all prime numbers $\leq 10$ would be:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T13:57:07.091Z  
+**Submitted:** 2026-10-07T16:47:00.611Z  
 
 ```sql
 /*
 Enter your query here.
 */
-SELECT NAME 
-FROM EMPLOYEE
-WHERE SALARY >2000 AND MONTHS <10
-ORDER BY EMPLOYEE_ID ASC;
+with recursive numbers(n) as
+(
+    select 1
+    union all
+    select n+1
+    from numbers
+    where n<20
+)
+select repeat('* ',n)
+from numbers;
 
 ```
 
