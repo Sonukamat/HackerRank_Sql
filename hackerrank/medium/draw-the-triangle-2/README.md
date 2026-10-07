@@ -30,18 +30,19 @@ Write a query to print the pattern _P(20)_.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T16:41:46.840Z  
+**Submitted:** 2026-10-07T16:46:51.986Z  
 
 ```sql
 /*
 Enter your query here.
 */
-with recursive numbers as (
-    select 20 as n 
+with recursive numbers(n) as
+(
+    select 1
     union all
-    select n-1
+    select n+1
     from numbers
-    where n >1
+    where n<20
 )
 select repeat('* ',n)
 from numbers;
