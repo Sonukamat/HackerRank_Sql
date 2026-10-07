@@ -1,13 +1,19 @@
 /*
 Enter your query here.
 */
-with recursive numbers(n) as
-(
-    select 1
-    union all
-    select n+1
-    from numbers
-    where n<20
+WITH RECURSIVE nums AS (
+    SELECT 2 AS n
+    UNION ALL
+    SELECT n + 1
+    FROM nums
+    WHERE n < 1000
 )
-select repeat('* ',n)
-from numbers;
+SELECT GROUP_CONCAT(n SEPARATOR '&')
+FROM nums
+WHERE n NOT IN (
+    SELECT a.n
+    FROM nums a
+    JOIN nums b
+      ON b.n < a.n
+     AND a.n % b.n = 0
+);
