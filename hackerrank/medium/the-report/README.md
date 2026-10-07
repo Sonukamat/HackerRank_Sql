@@ -64,15 +64,32 @@ So, the following students got <em>8</em>, <em>9</em> or <em>10</em> grades:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T17:31:04.477Z  
+**Submitted:** 2026-10-07T17:42:33.791Z  
 
 ```sql
-SELECT COUNTRY.CONTINENT,
-FLOOR (AVG(CITY.POPULATION))
-FROM CITY 
-JOIN COUNTRY 
-ON CITY.CountryCode = COUNTRY.Code 
-group by COUNTRY.CONTINENT;
+/*
+Enter your query here.
+*/
+SELECT
+    CASE
+        WHEN G.Grade < 8 THEN 'NULL'
+        ELSE S.Name
+    END AS Name,
+    G.Grade,
+    S.Marks
+FROM Students S
+JOIN Grades G
+    ON S.Marks BETWEEN G.Min_Mark AND G.Max_Mark
+ORDER BY
+    G.Grade DESC,
+    CASE
+        WHEN G.Grade >= 8 THEN S.Name
+        ELSE NULL
+    END ASC,
+    CASE
+        WHEN G.Grade < 8 THEN S.Marks
+        ELSE NULL
+    END ASC;
 
 ```
 
