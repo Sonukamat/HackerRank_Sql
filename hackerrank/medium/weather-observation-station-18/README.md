@@ -1,4 +1,4 @@
-# Revising the Select Query I
+# weather-observation-station-18
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -33,10 +33,19 @@ where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T16:56:46.007Z  
+**Submitted:** 2026-10-13T17:08:28.046Z  
 
 ```sql
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+
+select round(
+    ABS(MAX(LAT_N)-MIN(LAT_N))+
+    ABS(MAX(LONG_W)- MIN(LONG_W)),
+    4
+)
+FROM STATION;
 
 ```
 
