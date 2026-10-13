@@ -1,1 +1,10 @@
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+
+select round(
+    ABS(MAX(LAT_N)-MIN(LAT_N))+
+    ABS(MAX(LONG_W)- MIN(LONG_W)),
+    4
+)
+FROM STATION;
