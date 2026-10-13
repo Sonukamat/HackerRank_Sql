@@ -27,17 +27,19 @@ where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T17:08:43.753Z  
+**Submitted:** 2026-10-13T17:15:02.800Z  
 
 ```sql
 /*
 Enter your query here.
 */
-
-select round(
-    ABS(MAX(LAT_N)-MIN(LAT_N))+
-    ABS(MAX(LONG_W)- MIN(LONG_W)),
+SELECT ROUND (
+    SQRT(
+        POWER(MAX(LAT_N)- MIN(LAT_N),2)+
+        POWER(MAX(LONG_W)- MIN(LONG_W),2)
+    ),
     4
+    
 )
 FROM STATION;
 
