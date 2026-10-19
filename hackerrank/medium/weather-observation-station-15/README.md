@@ -21,10 +21,19 @@ where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-19T12:43:11.789Z  
+**Submitted:** 2026-10-19T12:47:25.960Z  
 
 ```sql
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+SELECT ROUND(LONG_W,4)
+FROM STATION
+WHERE LAT_N=(
+    SELECT MAX(LAT_N)
+    FROM STATION
+    WHERE LAT_N <137.2345
+);
 
 ```
 
