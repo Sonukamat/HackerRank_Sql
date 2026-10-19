@@ -1,8 +1,17 @@
 /*
 Enter your query here.
 */
-SELECT ROUND(LONG_W,4)
-FROM STATION
-WHERE LAT_N > 38.7780
-ORDER BY LAT_N ASC
-LIMIT 1;
+WITH RankedLatitudes AS(
+    SELECT
+    LAT_N,
+    ROW_NUMBER() OVER (ORDER BY LAT_N) AS rn,
+    COUNT(*) OVER () AS total_rows
+    from STATION
+    
+)
+SELECT ROUND(AVG(LAT_N),4)
+FROM RankedLatitudes
+where rn IN (
+    FLOOR((total_rows + 1)/2),
+    FLOOR((total_rows +2)/2)
+);
