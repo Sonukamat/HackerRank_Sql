@@ -1,4 +1,4 @@
-# Revising the Select Query I
+# revising-the-select-query
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -25,7 +25,7 @@ The **CITY** table is described as follows:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T16:56:40.678Z  
+**Submitted:** 2026-10-19T12:43:08.560Z  
 
 ```sql
 SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
