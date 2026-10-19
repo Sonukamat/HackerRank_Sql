@@ -21,19 +21,15 @@ where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-19T12:47:37.702Z  
+**Submitted:** 2026-10-19T12:53:39.304Z  
 
 ```sql
 /*
 Enter your query here.
 */
-SELECT ROUND(LONG_W,4)
+SELECT ROUND(MIN(LAT_N),4)
 FROM STATION
-WHERE LAT_N=(
-    SELECT MAX(LAT_N)
-    FROM STATION
-    WHERE LAT_N <137.2345
-);
+WHERE LAT_N > 38.7780;
 
 ```
 
