@@ -19,11 +19,12 @@ The **CITY** table is described as follows:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-22T06:44:20.959Z  
+**Submitted:** 2026-10-22T06:48:09.133Z  
 
 ```sql
-select floor(avg(POPULATION))
-FROM  CITY;
+SELECT SUM(POPULATION)
+FROM CITY
+WHERE COUNTRYCODE ='JPN';
 
 ```
 
