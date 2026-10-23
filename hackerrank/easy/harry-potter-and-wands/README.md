@@ -29,10 +29,30 @@ The following tables contain data on the wands in Ollivander's inventory:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-23T16:51:42.690Z  
+**Submitted:** 2026-10-23T17:00:09.904Z  
 
 ```sql
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+
+SELECT w.id, p.age, w.coins_needed, w.power
+FROM Wands w
+JOIN Wands_Property p
+    ON w.code = p.code
+JOIN (
+    SELECT p.age, w.power, MIN(w.coins_needed) AS min_coins
+    FROM Wands w
+    JOIN Wands_Property p
+        ON w.code = p.code
+    WHERE p.is_evil = 0
+    GROUP BY p.age, w.power
+) AS m
+    ON p.age = m.age
+    AND w.power = m.power
+    AND w.coins_needed = m.min_coins
+WHERE p.is_evil = 0
+ORDER BY w.power DESC, p.age DESC;
 
 ```
 
