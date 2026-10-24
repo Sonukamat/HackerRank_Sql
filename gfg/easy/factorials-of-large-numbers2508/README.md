@@ -33,7 +33,7 @@ Explanation: 1! = 1
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-24T16:44:38.600Z  
+**Submitted:** 2026-10-24T16:44:43.589Z  
 
 ```cpp
 class Solution {
