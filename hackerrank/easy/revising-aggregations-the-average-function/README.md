@@ -21,11 +21,11 @@ The **CITY** table is described as follows:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-29T12:54:50.608Z  
+**Submitted:** 2026-10-29T12:55:35.902Z  
 
 ```sql
 
-SELECT SUM(POPULATION)
+SELECT AVG(POPULATION)
 FROM CITY
 WHERE DISTRICT = 'California';
 
