@@ -1,10 +1,6 @@
 /*
 Enter your query here.
 */
-
-SELECT months * salary AS earnings, COUNT(*)
-FROM Employee
-GROUP BY earnings
-ORDER BY earnings DESC
-LIMIT 1;
-
+select round(sum(LAT_N),2),
+ROUND(SUM(LONG_W),2)
+FROM STATION;
