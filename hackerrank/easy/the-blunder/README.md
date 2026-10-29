@@ -1,4 +1,4 @@
-# Revising the Select Query I
+# The Blunder
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Easy-green)
 
@@ -27,10 +27,15 @@ The **EMPLOYEES** table is described as follows:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-29T12:31:26.861Z  
+**Submitted:** 2026-10-29T12:33:02.609Z  
 
 ```sql
-SELECT * FROM CITY WHERE CountryCode = 'USA' AND Population > 100000;
+/*
+Enter your query here.
+*/
+
+SELECT CEIL(AVG(Salary) - AVG(REPLACE(Salary, '0', '')))
+FROM EMPLOYEES;
 
 ```
 
