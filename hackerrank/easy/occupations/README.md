@@ -28,13 +28,31 @@ The **OCCUPATIONS** table is described as follows:
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-29T12:56:06.737Z  
+**Submitted:** 2026-10-29T12:57:10.256Z  
 
 ```sql
+/*
+Enter your query here.
+*/
 
-SELECT AVG(POPULATION)
-FROM CITY
-WHERE DISTRICT = 'California';
+WITH Ranked AS (
+    SELECT
+        Name,
+        Occupation,
+        ROW_NUMBER() OVER (
+            PARTITION BY Occupation
+            ORDER BY Name
+        ) AS rn
+    FROM OCCUPATIONS
+)
+SELECT
+    MAX(CASE WHEN Occupation = 'Doctor' THEN Name END) AS Doctor,
+    MAX(CASE WHEN Occupation = 'Professor' THEN Name END) AS Professor,
+    MAX(CASE WHEN Occupation = 'Singer' THEN Name END) AS Singer,
+    MAX(CASE WHEN Occupation = 'Actor' THEN Name END) AS Actor
+FROM Ranked
+GROUP BY rn
+ORDER BY rn;
 
 ```
 
