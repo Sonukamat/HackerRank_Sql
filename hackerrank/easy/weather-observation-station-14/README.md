@@ -19,20 +19,20 @@ where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 
 ## Solution
 
-**Language:** C++  
+**Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-29T12:48:55.579Z  
+**Submitted:** 2026-10-29T12:53:05.080Z  
 
-```cpp
+```sql
 /*
-Enter your query here.
+Enter your query here.
 */
 
-SELECT TRUNCATE(SUM(LAT_N), 4)
-FROM STATION
-WHERE LAT_N > 38.7880
-  AND LAT_N < 137.2345;
+
+SELECT TRUNCATE(MAX(LAT_N), 4)
+FROM STATION
+WHERE LAT_N < 137.2345;
 
 ```
 
