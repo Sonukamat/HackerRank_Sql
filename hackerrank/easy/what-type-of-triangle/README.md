@@ -30,28 +30,24 @@ Each row in the table denotes the lengths of each of a triangle's three sides.
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-29T13:03:30.298Z  
+**Submitted:** 2026-10-29T13:04:32.551Z  
 
 ```sql
 /*
 Enter your query here.
 */
 
-SELECT Start_Date, MIN(End_Date)
-FROM
-    (SELECT Start_Date
-     FROM Projects
-     WHERE Start_Date NOT IN (
-         SELECT End_Date FROM Projects
-     )) AS S,
-    (SELECT End_Date
-     FROM Projects
-     WHERE End_Date NOT IN (
-         SELECT Start_Date FROM Projects
-     )) AS E
-WHERE Start_Date < End_Date
-GROUP BY Start_Date
-ORDER BY DATEDIFF(MIN(End_Date), Start_Date), Start_Date;
+SELECT
+    CASE
+        WHEN A + B <= C OR A + C <= B OR B + C <= A
+            THEN 'Not A Triangle'
+        WHEN A = B AND B = C
+            THEN 'Equilateral'
+        WHEN A = B OR B = C OR A = C
+            THEN 'Isosceles'
+        ELSE 'Scalene'
+    END
+FROM TRIANGLES;
 
 ```
 
