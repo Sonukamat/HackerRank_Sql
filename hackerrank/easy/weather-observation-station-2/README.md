@@ -31,19 +31,18 @@ where $lat$ is the sum of all values in *LAT\_N* and $lon$ is the sum of all val
 
 ## Solution
 
-**Language:** SQL  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-29T12:41:36.650Z  
+**Submitted:** 2026-10-29T12:41:55.564Z  
 
-```sql
+```cpp
 /*
-Enter your query here.
+Enter your query here.
 */
-select round(sum(LAT_N),2),
+select round(sum(LAT_N),2),
 ROUND(SUM(LONG_W),2)
-FROM STATION;
-
+FROM STATION;
 ```
 
 ---
