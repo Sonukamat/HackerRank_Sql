@@ -33,7 +33,7 @@ Explanation: "aaa" is the longest prefix and suffix.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T06:04:14.606Z  
+**Submitted:** 2026-10-31T06:04:20.517Z  
 
 ```cpp
 
