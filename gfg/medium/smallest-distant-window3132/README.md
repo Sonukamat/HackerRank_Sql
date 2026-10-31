@@ -32,7 +32,7 @@ Explanation: There are multiple substring with smallest length that contains all
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T05:01:54.225Z  
+**Submitted:** 2026-10-31T05:02:03.809Z  
 
 ```cpp
 
