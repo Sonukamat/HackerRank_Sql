@@ -27,7 +27,7 @@ Explanation: The character '0' is not present in the string, so no substring can
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T06:52:15.599Z  
+**Submitted:** 2026-10-31T06:52:26.627Z  
 
 ```cpp
 
