@@ -35,7 +35,7 @@ Explanation: The entire string "aabaaab" has exactly 2 unique characters 'a' and
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T06:59:53.488Z  
+**Submitted:** 2026-10-31T07:00:01.022Z  
 
 ```cpp
 
