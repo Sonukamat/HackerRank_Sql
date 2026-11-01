@@ -37,9 +37,9 @@ Explanation: "leeto" did not occur in "leetcode", so we return -1.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms (beats 100.00%)  
+**Runtime:** 1 ms (beats 25.15%)  
 **Memory:** 9.5 MB (beats 9.06%)  
-**Submitted:** 2026-11-01T12:28:00.133Z  
+**Submitted:** 2026-11-01T12:28:18.227Z  
 
 ```cpp
 
