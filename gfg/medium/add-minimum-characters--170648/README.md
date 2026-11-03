@@ -39,7 +39,7 @@ You don't need to read input or print anything. Your task is to complete the fun
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-03T09:24:47.559Z  
+**Submitted:** 2026-11-03T09:24:57.008Z  
 
 ```cpp
 class Solution {
